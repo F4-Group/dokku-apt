@@ -28,7 +28,7 @@ fi
 if [ -f $DIR/apt-packages ]; then
     PACKAGES=\$(cat "$DIR/apt-packages" | tr "\\n" " ")
     apt-get update
-    apt-get install -y \$PACKAGES
+    apt-get install -y --no-install-recommends \$PACKAGES
     echo "-----> Injected packages: \$PACKAGES"
 fi
 if [ -d $DIR/dpkg-packages ]; then
